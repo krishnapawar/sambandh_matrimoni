@@ -58,7 +58,7 @@ h2 {
   font-weight: 600;
   line-height: 1;
 }
-.faq-title h2::before {
+.befor_h::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -160,9 +160,7 @@ h3 {
   font-weight: 600;
   line-height: 1;
 }
-section h2::before, section
-h1::before, section
-h3::before {
+.befor_h::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -208,9 +206,7 @@ ul {
 footer li{
   margin-bottom: 6px;
 }
-body {
-  background: white;
-}
+
 
 @media (max-width: 991px) {
   .faq {
@@ -221,3 +217,133 @@ body {
     margin-top: 10px;
   }
 }
+
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+
+
+/*form styles*/
+.msform {
+	width: 525px;
+	margin: 50px auto;
+	position: relative;
+}
+.msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 10px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0% 0%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+.msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+.msform input, .msform textarea {
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+/*buttons*/
+.msform .action-button {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px;
+	margin: 10px 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+.msform .action-button:hover, .msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*form-progressbar*/
+.form-progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+} 
+
+form .form-require::before {
+    color:red;
+    content: '* '; /* Add * before the text */
+  }
+.form-progressbar li {
+    text-align: center;
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+.form-progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*form-progressbar connectors*/
+.form-progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+.form-progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.form-progressbar li.active:before,  .form-progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+
+.vertical-line {
+    width: 100%;
+    height: 1vh; /* Adjust the height as needed */
+    background: linear-gradient(to bottom, #ff0000, #00ff00, #0000ff); /* Adjust gradient colors */
+    animation: gradientAnimation 3s infinite; /* Adjust animation duration */
+  }
+ 
+  body {
+	
+    /*background = gradient + image pattern combo*/
+    background: black;
+  }
+  /* body {
+    font-family: montserrat, arial, verdana;
+  }
+  body {
+    background: white;
+  } */

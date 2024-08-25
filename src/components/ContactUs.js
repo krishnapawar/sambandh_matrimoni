@@ -11,11 +11,9 @@ const ContactUs=()=>{
       </div>
       <div className="row">
         <div className="col-md-6">
-          <Card></Card>
-          <div className="card">
-            <div className="card-body">
-              {/* <!-- Contact Form --> */}
-              <form>
+          <Card>
+            {/* <!-- Contact Form --> */}
+            <form>
                 <div className="mb-3">
                   <label for="name" className="form-label">
                     Your Name
@@ -59,8 +57,8 @@ const ContactUs=()=>{
                   Submit
                 </button>
               </form>
-            </div>
-          </div>
+          </Card>
+          
         </div>
 
         <div className="col-md-6">

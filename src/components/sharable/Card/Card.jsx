@@ -1,11 +1,17 @@
-import "./Card.module.css";
+import style from "./Card.module.css";
 const Card = ({title,sub_title, children}) => {
   return (
     <fieldset className="c_card">
       <div className="text-center">
-        <h2 className="fs-title">{title || ""}</h2>
-        <br></br>
-        <h3 className="fs-subtitle">{sub_title || ""}</h3>
+        {
+          title ? <><h2 className={style.fs_title}>{title || ""}</h2>
+          <br></br></>:""
+        }
+
+        {
+          sub_title ? <h3 className={style.fs_subtitle}>{sub_title || ""}</h3>
+        :""
+        }
         <hr></hr>
       </div>
       {children}

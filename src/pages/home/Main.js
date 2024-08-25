@@ -140,6 +140,7 @@ function Main() {
             </div>
           </div>
         </div>
+        
         <div className="row mt-4">
           {/* <!-- Step 4: Get Profile Information --> */}
           <div className="col-md-4">
